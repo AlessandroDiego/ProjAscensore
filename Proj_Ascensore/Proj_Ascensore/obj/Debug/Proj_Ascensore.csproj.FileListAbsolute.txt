@@ -1,0 +1,15 @@
+C:\Users\alessandro.diego\Desktop\Proj_Ascensore\Proj_Ascensore\Proj_Ascensore\bin\Debug\Proj_Ascensore.exe.config
+C:\Users\alessandro.diego\Desktop\Proj_Ascensore\Proj_Ascensore\Proj_Ascensore\bin\Debug\Proj_Ascensore.exe
+C:\Users\alessandro.diego\Desktop\Proj_Ascensore\Proj_Ascensore\Proj_Ascensore\bin\Debug\Proj_Ascensore.pdb
+C:\Users\alessandro.diego\Desktop\Proj_Ascensore\Proj_Ascensore\Proj_Ascensore\obj\Debug\Proj_Ascensore.csprojAssemblyReference.cache
+C:\Users\alessandro.diego\Desktop\Proj_Ascensore\Proj_Ascensore\Proj_Ascensore\obj\Debug\MainWindow.g.cs
+C:\Users\alessandro.diego\Desktop\Proj_Ascensore\Proj_Ascensore\Proj_Ascensore\obj\Debug\App.g.cs
+C:\Users\alessandro.diego\Desktop\Proj_Ascensore\Proj_Ascensore\Proj_Ascensore\obj\Debug\Proj_Ascensore_MarkupCompile.cache
+C:\Users\alessandro.diego\Desktop\Proj_Ascensore\Proj_Ascensore\Proj_Ascensore\obj\Debug\Proj_Ascensore_MarkupCompile.lref
+C:\Users\alessandro.diego\Desktop\Proj_Ascensore\Proj_Ascensore\Proj_Ascensore\obj\Debug\MainWindow.baml
+C:\Users\alessandro.diego\Desktop\Proj_Ascensore\Proj_Ascensore\Proj_Ascensore\obj\Debug\Proj_Ascensore.g.resources
+C:\Users\alessandro.diego\Desktop\Proj_Ascensore\Proj_Ascensore\Proj_Ascensore\obj\Debug\Proj_Ascensore.Properties.Resources.resources
+C:\Users\alessandro.diego\Desktop\Proj_Ascensore\Proj_Ascensore\Proj_Ascensore\obj\Debug\Proj_Ascensore.csproj.GenerateResource.cache
+C:\Users\alessandro.diego\Desktop\Proj_Ascensore\Proj_Ascensore\Proj_Ascensore\obj\Debug\Proj_Ascensore.csproj.CoreCompileInputs.cache
+C:\Users\alessandro.diego\Desktop\Proj_Ascensore\Proj_Ascensore\Proj_Ascensore\obj\Debug\Proj_Ascensore.exe
+C:\Users\alessandro.diego\Desktop\Proj_Ascensore\Proj_Ascensore\Proj_Ascensore\obj\Debug\Proj_Ascensore.pdb
