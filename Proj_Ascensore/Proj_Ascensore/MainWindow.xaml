@@ -10,6 +10,13 @@
         <Image Margin="0,0,873,0" Source="SfondoV.png" Stretch="Fill"/>
         <Image Margin="388,639,1004,10" Source="Uomo.png" Stretch="Fill"/>
         <Image Margin="351,269,1004,371" Source="Donna.png" Stretch="Fill"/>
-        <Image Margin="294,600,1049,0" Source="Ascensore.png" Stretch="Fill"/>
+        <Image x:Name="Ascensore_1" Margin="294,600,1049,0" Source="Ascensore.png" Stretch="Fill" RenderTransformOrigin="0.507,0.545"/>
+        <Button x:Name="BTN_4" Content="4" HorizontalAlignment="Left" VerticalAlignment="Top" Width="124" Margin="924,600,0,0" Height="102" FontSize="36" Click="BTN_4_Click"/>
+        <Button x:Name="BTN_5" Content="5" HorizontalAlignment="Left" VerticalAlignment="Top" Width="124" Margin="1086,600,0,0" Height="102" FontSize="36" Click="BTN_5_Click"/>
+        <Button x:Name="BTN_Terra" Content="PT" HorizontalAlignment="Left" VerticalAlignment="Top" Width="124" Margin="764,456,0,0" Height="102" FontSize="36" Click="BTN_Terra_Click"/>
+        <Button x:Name="BTN_1" Content="1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="124" Margin="924,456,0,0" Height="102" FontSize="36" Click="BTN_1_Click"/>
+        <Button x:Name="BTN_2" Content="2" HorizontalAlignment="Left" VerticalAlignment="Top" Width="124" Margin="1086,456,0,0" Height="102" FontSize="36" Click="BTN_2_Click"/>
+        <Button x:Name="BTN_3" Content="3" HorizontalAlignment="Left" VerticalAlignment="Top" Width="124" Margin="764,600,0,0" Height="102" RenderTransformOrigin="0.5,0.534" FontSize="36" Click="BTN_3_Click"/>
+        <Label Content="Muovi L'ascensore" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="764,372,0,0" Height="79" Width="446" FontSize="36"/>
     </Grid>
 </Window>
