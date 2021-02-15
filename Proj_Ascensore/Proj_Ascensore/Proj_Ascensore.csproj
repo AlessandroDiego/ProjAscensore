@@ -95,7 +95,16 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="SfondoAscensore.png" />
+    <Resource Include="Uomo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Donna.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Ascensore.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="SfondoV.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

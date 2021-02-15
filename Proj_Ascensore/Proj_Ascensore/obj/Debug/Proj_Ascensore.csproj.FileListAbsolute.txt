@@ -13,3 +13,18 @@ C:\Users\alessandro.diego\Desktop\Proj_Ascensore\Proj_Ascensore\Proj_Ascensore\o
 C:\Users\alessandro.diego\Desktop\Proj_Ascensore\Proj_Ascensore\Proj_Ascensore\obj\Debug\Proj_Ascensore.csproj.CoreCompileInputs.cache
 C:\Users\alessandro.diego\Desktop\Proj_Ascensore\Proj_Ascensore\Proj_Ascensore\obj\Debug\Proj_Ascensore.exe
 C:\Users\alessandro.diego\Desktop\Proj_Ascensore\Proj_Ascensore\Proj_Ascensore\obj\Debug\Proj_Ascensore.pdb
+C:\Users\Alessandro\Desktop\File Word\Fisica-Telecom & Tpsi\Git\ProjAscensore\Proj_Ascensore\Proj_Ascensore\bin\Debug\Proj_Ascensore.exe.config
+C:\Users\Alessandro\Desktop\File Word\Fisica-Telecom & Tpsi\Git\ProjAscensore\Proj_Ascensore\Proj_Ascensore\bin\Debug\Proj_Ascensore.exe
+C:\Users\Alessandro\Desktop\File Word\Fisica-Telecom & Tpsi\Git\ProjAscensore\Proj_Ascensore\Proj_Ascensore\bin\Debug\Proj_Ascensore.pdb
+C:\Users\Alessandro\Desktop\File Word\Fisica-Telecom & Tpsi\Git\ProjAscensore\Proj_Ascensore\Proj_Ascensore\obj\Debug\Proj_Ascensore.csprojAssemblyReference.cache
+C:\Users\Alessandro\Desktop\File Word\Fisica-Telecom & Tpsi\Git\ProjAscensore\Proj_Ascensore\Proj_Ascensore\obj\Debug\MainWindow.g.cs
+C:\Users\Alessandro\Desktop\File Word\Fisica-Telecom & Tpsi\Git\ProjAscensore\Proj_Ascensore\Proj_Ascensore\obj\Debug\App.g.cs
+C:\Users\Alessandro\Desktop\File Word\Fisica-Telecom & Tpsi\Git\ProjAscensore\Proj_Ascensore\Proj_Ascensore\obj\Debug\Proj_Ascensore_MarkupCompile.cache
+C:\Users\Alessandro\Desktop\File Word\Fisica-Telecom & Tpsi\Git\ProjAscensore\Proj_Ascensore\Proj_Ascensore\obj\Debug\Proj_Ascensore_MarkupCompile.lref
+C:\Users\Alessandro\Desktop\File Word\Fisica-Telecom & Tpsi\Git\ProjAscensore\Proj_Ascensore\Proj_Ascensore\obj\Debug\MainWindow.baml
+C:\Users\Alessandro\Desktop\File Word\Fisica-Telecom & Tpsi\Git\ProjAscensore\Proj_Ascensore\Proj_Ascensore\obj\Debug\Proj_Ascensore.g.resources
+C:\Users\Alessandro\Desktop\File Word\Fisica-Telecom & Tpsi\Git\ProjAscensore\Proj_Ascensore\Proj_Ascensore\obj\Debug\Proj_Ascensore.Properties.Resources.resources
+C:\Users\Alessandro\Desktop\File Word\Fisica-Telecom & Tpsi\Git\ProjAscensore\Proj_Ascensore\Proj_Ascensore\obj\Debug\Proj_Ascensore.csproj.GenerateResource.cache
+C:\Users\Alessandro\Desktop\File Word\Fisica-Telecom & Tpsi\Git\ProjAscensore\Proj_Ascensore\Proj_Ascensore\obj\Debug\Proj_Ascensore.csproj.CoreCompileInputs.cache
+C:\Users\Alessandro\Desktop\File Word\Fisica-Telecom & Tpsi\Git\ProjAscensore\Proj_Ascensore\Proj_Ascensore\obj\Debug\Proj_Ascensore.exe
+C:\Users\Alessandro\Desktop\File Word\Fisica-Telecom & Tpsi\Git\ProjAscensore\Proj_Ascensore\Proj_Ascensore\obj\Debug\Proj_Ascensore.pdb

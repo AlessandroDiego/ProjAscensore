@@ -5,9 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Proj_Ascensore"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <Image Source="SfondoAscensore.png" Stretch="Fill"/>
-
+        Title="MainWindow" Height="766" Width="1427.5">
+    <Grid Margin="0,0,2,3">
+        <Image Margin="0,0,873,0" Source="SfondoV.png" Stretch="Fill"/>
+        <Image Margin="388,639,1004,10" Source="Uomo.png" Stretch="Fill"/>
+        <Image Margin="351,269,1004,371" Source="Donna.png" Stretch="Fill"/>
+        <Image Margin="294,600,1049,0" Source="Ascensore.png" Stretch="Fill"/>
     </Grid>
 </Window>
