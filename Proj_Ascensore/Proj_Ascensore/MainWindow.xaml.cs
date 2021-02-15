@@ -37,14 +37,16 @@ namespace Proj_Ascensore
         public int posVerticale1 = 639;
         public Thread TEntrata1;
         public Thread TUscita1;
+        int i = 0;
         //
 
         //Donna
         readonly Uri uriDonna = new Uri("Donna.png", UriKind.Relative);
-        public int posOrizz2 = 374;
-        public int posTerza2 = 1018;
-        public Thread TEntrata2;
-        public Thread TUscita2;
+        public int posOrizz2 = 351;
+        public int posVerticale2 = 269;
+        public int posTerza2 = 1004;
+        public int posQuarta2 = 371;
+
         //
 
 
@@ -59,7 +61,7 @@ namespace Proj_Ascensore
             Donna.Source = imm3;
 
             TEntrata1 = new Thread(new ThreadStart(MovimentoUomo));
-            TUscita1 = new Thread(new ThreadStart(uomoEsce));
+            TUscita1 = new Thread(new ThreadStart(Esce));
             TEntrata1.Start();
 
 
@@ -73,6 +75,7 @@ namespace Proj_Ascensore
             ThreadAndata = new Thread(new ThreadStart(PianoTerra));
             ThreadRitorno = new Thread(new ThreadStart(Ritorno));
             ThreadAndata.Start();
+            
         }
 
         private void BTN_1_Click(object sender, RoutedEventArgs e)
@@ -81,6 +84,7 @@ namespace Proj_Ascensore
             ThreadAndata = new Thread(new ThreadStart(Piano1));
             ThreadRitorno = new Thread(new ThreadStart(Ritorno));
             ThreadAndata.Start();
+            
         }
 
         private void BTN_2_Click(object sender, RoutedEventArgs e)
@@ -89,6 +93,7 @@ namespace Proj_Ascensore
             ThreadAndata = new Thread(new ThreadStart(Piano2));
             ThreadRitorno = new Thread(new ThreadStart(Ritorno));
             ThreadAndata.Start();
+            
         }
 
         private void BTN_3_Click(object sender, RoutedEventArgs e)
@@ -155,12 +160,29 @@ namespace Proj_Ascensore
                 this.Dispatcher.BeginInvoke(new Action(() =>
                 {
                     Ascensore_1.Margin = new Thickness(294, posVerticaleAscensore, 1049, posizioneQuarta);
-                    Uomo.Margin = new Thickness(posOrizz1, posVerticale1, posTerza1, posQuarta1);
+                    if (i == 0)
+                    {
+                        Uomo.Margin = new Thickness(posOrizz1, posVerticale1, posTerza1, posQuarta1);
+                    }
+                    
                 }));
                 
             }
-            Thread.Sleep(TimeSpan.FromMilliseconds(1000));
-            TUscita1.Start();
+            if (i == 0)
+            {
+                Thread.Sleep(TimeSpan.FromMilliseconds(1000));
+                TUscita1.Start();
+            }
+            else if (i == 2)
+            {
+                Thread.Sleep(TimeSpan.FromMilliseconds(1000));
+                TUscita1.Start();
+            }
+            else
+            {
+                Thread.Sleep(TimeSpan.FromMilliseconds(1));
+                ThreadRitorno.Start();
+            }
 
         }
         public void Piano2()
@@ -175,12 +197,28 @@ namespace Proj_Ascensore
                 this.Dispatcher.BeginInvoke(new Action(() =>
                 {
                     Ascensore_1.Margin = new Thickness(294, posVerticaleAscensore, 1049, posizioneQuarta);
-                    Uomo.Margin = new Thickness(posOrizz1, posVerticale1, posTerza1, posQuarta1);
+                    if (i == 0)
+                    {
+                        Uomo.Margin = new Thickness(posOrizz1, posVerticale1, posTerza1, posQuarta1);
+                    }
                 }));
 
             }
-            Thread.Sleep(TimeSpan.FromMilliseconds(1000));
-            TUscita1.Start();
+            if (i == 0)
+            {
+                Thread.Sleep(TimeSpan.FromMilliseconds(1000));
+                TUscita1.Start();
+            }
+            else if (i == 2)
+            {
+                Thread.Sleep(TimeSpan.FromMilliseconds(1000));
+                TUscita1.Start();
+            }
+            else
+            {
+                Thread.Sleep(TimeSpan.FromMilliseconds(1));
+                ThreadRitorno.Start();
+            }
         }
         public void Piano3()
         {
@@ -194,12 +232,26 @@ namespace Proj_Ascensore
                 this.Dispatcher.BeginInvoke(new Action(() =>
                 {
                     Ascensore_1.Margin = new Thickness(294, posVerticaleAscensore, 1049, posizioneQuarta);
-                    Uomo.Margin = new Thickness(posOrizz1, posVerticale1, posTerza1, posQuarta1);
+                    if (i == 0)
+                    {
+                        Uomo.Margin = new Thickness(posOrizz1, posVerticale1, posTerza1, posQuarta1);
+                    }
                 }));
 
             }
-            Thread.Sleep(TimeSpan.FromMilliseconds(1000));
-            TUscita1.Start();
+            if (i == 0)
+            {
+                Thread.Sleep(TimeSpan.FromMilliseconds(1000));
+                TUscita1.Start();
+            }
+            else 
+            {
+                Thread.Sleep(TimeSpan.FromMilliseconds(1000));
+                TEntrata1 = new Thread(new ThreadStart(MovimentoDonna));
+                TEntrata1.Start();
+            }
+            
+            
         }
         public void Piano4()
         {
@@ -213,13 +265,29 @@ namespace Proj_Ascensore
                 this.Dispatcher.BeginInvoke(new Action(() =>
                 {
                     Ascensore_1.Margin = new Thickness(294, posVerticaleAscensore, 1049, posizioneQuarta);
-                    Uomo.Margin = new Thickness(posOrizz1, posVerticale1, posTerza1, posQuarta1);
+                    if (i == 0)
+                    {
+                        Uomo.Margin = new Thickness(posOrizz1, posVerticale1, posTerza1, posQuarta1);
+                    }
 
                 }));
 
             }
-            Thread.Sleep(TimeSpan.FromMilliseconds(1000));
-            TUscita1.Start();
+            if (i == 0)
+            {
+                Thread.Sleep(TimeSpan.FromMilliseconds(1000));
+                TUscita1.Start();
+            }
+            else if (i == 2)
+            {
+                Thread.Sleep(TimeSpan.FromMilliseconds(1000));
+                TUscita1.Start();
+            }
+            else
+            {
+                Thread.Sleep(TimeSpan.FromMilliseconds(1));
+                ThreadRitorno.Start();
+            }
         }
         public void Piano5()
         {
@@ -229,34 +297,56 @@ namespace Proj_Ascensore
                 posizioneQuarta += 10;
                 posQuarta1 += 10;
                 posVerticale1 -= 10;
+                posQuarta2 += 10;
+                posVerticale2 -= 10;
                 Thread.Sleep(TimeSpan.FromMilliseconds(100));
                 this.Dispatcher.BeginInvoke(new Action(() =>
                 {
                     Ascensore_1.Margin = new Thickness(294, posVerticaleAscensore, 1049, posizioneQuarta);
-                    Uomo.Margin = new Thickness(posOrizz1, posVerticale1, posTerza1, posQuarta1);
+                    if (i == 0)
+                    {
+                        Uomo.Margin = new Thickness(posOrizz1, posVerticale1, posTerza1, posQuarta1);
+                    }
+                    if (i == 2)
+                    {
+                        Donna.Margin = new Thickness(294, (posVerticale2 - 120), 1061, (posQuarta2 + 120));
+                    }
 
                 }));
 
             }
-            Thread.Sleep(TimeSpan.FromMilliseconds(1000));
-            TUscita1.Start();
+            if (i == 0)
+            {
+                Thread.Sleep(TimeSpan.FromMilliseconds(1000));
+                TUscita1.Start();
+            }
+            else
+            {
+                Thread.Sleep(TimeSpan.FromMilliseconds(1000));
+                TUscita1 = new Thread(new ThreadStart(Esce));
+                TUscita1.Start();
+            }
+
         }
 
         public void Ritorno()
         {
-            TUscita1.Abort();
+            i++;
             while (posVerticaleAscensore <= 600)
             {
                 posVerticaleAscensore += 10;
                 posizioneQuarta -= 10;
-                posQuarta1 -= 10;
-                posVerticale1 += 10;
-
+                posQuarta2 -= 10;
+                posVerticale2 += 10;
                 
                 Thread.Sleep(TimeSpan.FromMilliseconds(100));
                 this.Dispatcher.BeginInvoke(new Action(() =>
                 {
                     Ascensore_1.Margin = new Thickness(294, posVerticaleAscensore, 1049, posizioneQuarta);
+                    if (i == 2)
+                    {
+                        Donna.Margin = new Thickness(294,(posVerticale2-120),1061,(posQuarta2+120));
+                    }
                    
                 }));
             }
@@ -279,6 +369,11 @@ namespace Proj_Ascensore
             BTN_3.IsEnabled = true;
             BTN_4.IsEnabled = true;
             BTN_5.IsEnabled = true;
+
+            if (i == 2)
+            {
+                BTN_4.IsEnabled = false;
+            }
         }
         //
 
@@ -299,17 +394,27 @@ namespace Proj_Ascensore
             }
         }
 
-        public void uomoEsce()
+        public void Esce()
         {
-            while (posOrizz1 > 150)
+            while (posOrizz1 > 230 || posOrizz2>230)
             {
                 posOrizz1 -= 2;
                 posTerza1 += 2;
-                 
+                posOrizz2 -= 2;
+                posTerza2 += 2;
+
                 Thread.Sleep(TimeSpan.FromMilliseconds(100));
                 this.Dispatcher.BeginInvoke(new Action(() =>
                 {
-                    Uomo.Margin = new Thickness(posOrizz1, posVerticale1, posTerza1,posQuarta1 );
+                    if (i == 0)
+                    {
+                        Uomo.Margin = new Thickness(posOrizz1, posVerticale1, posTerza1, posQuarta1);
+                    }else
+                    {
+                        Donna.Margin = new Thickness(posOrizz2, posVerticale2, posTerza2, posQuarta2);
+                    }
+                    
+
 
                 }));
 
@@ -318,6 +423,42 @@ namespace Proj_Ascensore
             Thread.Sleep(TimeSpan.FromMilliseconds(1));
             ThreadRitorno.Start();
         }
-        
+        //
+
+        //DONNA
+        private void BTN_SecondaPersona_Click(object sender, RoutedEventArgs e)
+        {
+            BTN_SecondaPersona.IsEnabled = false;
+            if (i == 1 )
+            {
+                ThreadAndata = new Thread(new ThreadStart(Piano3));
+                ThreadAndata.Start();
+            }
+            else
+            {
+                MessageBox.Show("la prima persona non ha ancora finito il suo percorso");
+            }
+        }
+
+        public void MovimentoDonna()
+        {
+            while (posOrizz2 > 290 )
+            {
+                posOrizz2 -= 2;
+                posTerza2 += 2;
+                Thread.Sleep(TimeSpan.FromMilliseconds(100));
+                this.Dispatcher.BeginInvoke(new Action(() =>
+                {
+                    Donna.Margin = new Thickness(posOrizz2, posVerticale2, posTerza2, posQuarta2);
+
+                }));
+
+            }
+            Thread.Sleep(TimeSpan.FromMilliseconds(100));
+            ThreadRitorno = new Thread(new ThreadStart(Ritorno));
+            ThreadRitorno.Start();
+        }
+
+
     }
 }

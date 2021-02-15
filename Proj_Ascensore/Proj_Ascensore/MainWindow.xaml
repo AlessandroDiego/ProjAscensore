@@ -18,6 +18,7 @@
         <Button x:Name="BTN_2" Content="2" HorizontalAlignment="Left" VerticalAlignment="Top" Width="124" Margin="974,471,0,0" Height="102" FontSize="36" Click="BTN_2_Click"/>
         <Button x:Name="BTN_3" Content="3" HorizontalAlignment="Left" VerticalAlignment="Top" Width="124" Margin="652,615,0,0" Height="102" RenderTransformOrigin="0.5,0.534" FontSize="36" Click="BTN_3_Click"/>
         <Label Content="Muovi L'ascensore" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="652,387,0,0" Height="79" Width="446" FontSize="36"/>
-        <Button x:Name="Btn_Ritornato" Content="Ascensore&#xD;&#xA;Ritornato al&#xD;&#xA; Piano Terra" HorizontalAlignment="Left" VerticalAlignment="Top" Width="176" Margin="1182,541,0,0" Height="109" FontSize="22" Click="Btn_Ritornato_Click"/>
+        <Button x:Name="Btn_Ritornato" Content="Ascensore&#xD;&#xA;Ritornato al&#xD;&#xA; Piano Terra" HorizontalAlignment="Left" VerticalAlignment="Top" Width="176" Margin="1216,471,0,0" Height="102" FontSize="22" Click="Btn_Ritornato_Click"/>
+        <Button x:Name="BTN_SecondaPersona" Content="Seconda Persona" HorizontalAlignment="Left" VerticalAlignment="Top" Width="176" Margin="1216,615,0,0" Height="90" FontSize="22" Click="BTN_SecondaPersona_Click"/>
     </Grid>
 </Window>
