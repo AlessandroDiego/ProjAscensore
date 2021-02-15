@@ -21,14 +21,31 @@ namespace Proj_Ascensore
     /// </summary>
     public partial class MainWindow : Window
     {
+        //Ascensore
         readonly Uri uriAscensore = new Uri("Ascensore.png", UriKind.Relative);
         public int posVerticaleAscensore = 600;
-        public int posOrizzontaleAscensore = 294;
         public int posizioneQuarta = 0;
         public Thread ThreadAndata;
         public Thread ThreadRitorno;
-        Random r1 = new Random();
+        //
 
+        //Uomo
+        readonly Uri uriUomo = new Uri("Uomo.png", UriKind.Relative);
+        public int posOrizz1 = 374;
+        public int posTerza1 = 1018;
+        public int posQuarta1 = 10;
+        public int posVerticale1 = 639;
+        public Thread TEntrata1;
+        public Thread TUscita1;
+        //
+
+        //Donna
+        readonly Uri uriDonna = new Uri("Donna.png", UriKind.Relative);
+        public int posOrizz2 = 374;
+        public int posTerza2 = 1018;
+        public Thread TEntrata2;
+        public Thread TUscita2;
+        //
 
 
         public MainWindow()
@@ -36,18 +53,26 @@ namespace Proj_Ascensore
             InitializeComponent();
             ImageSource imm1 = new BitmapImage(uriAscensore);
             Ascensore_1.Source = imm1;
+            ImageSource imm2 = new BitmapImage(uriUomo);
+            Uomo.Source = imm2;
+            ImageSource imm3 = new BitmapImage(uriDonna);
+            Donna.Source = imm3;
+
+            TEntrata1 = new Thread(new ThreadStart(MovimentoUomo));
+            TUscita1 = new Thread(new ThreadStart(uomoEsce));
+            TEntrata1.Start();
+
 
         }
 
+
+        // ASCENSORE
         private void BTN_Terra_Click(object sender, RoutedEventArgs e)
         {
             SpegniBottoni();
             ThreadAndata = new Thread(new ThreadStart(PianoTerra));
             ThreadRitorno = new Thread(new ThreadStart(Ritorno));
             ThreadAndata.Start();
-            
-
-
         }
 
         private void BTN_1_Click(object sender, RoutedEventArgs e)
@@ -56,7 +81,6 @@ namespace Proj_Ascensore
             ThreadAndata = new Thread(new ThreadStart(Piano1));
             ThreadRitorno = new Thread(new ThreadStart(Ritorno));
             ThreadAndata.Start();
-            
         }
 
         private void BTN_2_Click(object sender, RoutedEventArgs e)
@@ -65,8 +89,6 @@ namespace Proj_Ascensore
             ThreadAndata = new Thread(new ThreadStart(Piano2));
             ThreadRitorno = new Thread(new ThreadStart(Ritorno));
             ThreadAndata.Start();
-            
-
         }
 
         private void BTN_3_Click(object sender, RoutedEventArgs e)
@@ -75,7 +97,6 @@ namespace Proj_Ascensore
             ThreadAndata = new Thread(new ThreadStart(Piano3));
             ThreadRitorno = new Thread(new ThreadStart(Ritorno));
             ThreadAndata.Start();
-            
         }
 
         private void BTN_4_Click(object sender, RoutedEventArgs e)
@@ -84,8 +105,6 @@ namespace Proj_Ascensore
             ThreadAndata = new Thread(new ThreadStart(Piano4));
             ThreadRitorno = new Thread(new ThreadStart(Ritorno));
             ThreadAndata.Start();
-            
-
         }
 
         private void BTN_5_Click(object sender, RoutedEventArgs e)
@@ -93,8 +112,18 @@ namespace Proj_Ascensore
             SpegniBottoni();
             ThreadAndata = new Thread(new ThreadStart(Piano5));
             ThreadRitorno = new Thread(new ThreadStart(Ritorno));
-            ThreadAndata.Start();
-            
+            ThreadAndata.Start(); 
+        }
+        private void Btn_Ritornato_Click(object sender, RoutedEventArgs e)
+        {
+            if (posVerticaleAscensore >= 600)
+            {
+                AccendiBottoni();
+            }
+            else
+            {
+                MessageBox.Show("L'ascensore non è ancora tornato al piano terra");
+            }
         }
 
         public void PianoTerra()
@@ -120,16 +149,18 @@ namespace Proj_Ascensore
             {
                 posVerticaleAscensore -= 10;
                 posizioneQuarta += 10;
+                posQuarta1 += 10;
+                posVerticale1 -= 10;
                 Thread.Sleep(TimeSpan.FromMilliseconds(100));
                 this.Dispatcher.BeginInvoke(new Action(() =>
                 {
                     Ascensore_1.Margin = new Thickness(294, posVerticaleAscensore, 1049, posizioneQuarta);
-                   
+                    Uomo.Margin = new Thickness(posOrizz1, posVerticale1, posTerza1, posQuarta1);
                 }));
                 
             }
-            Thread.Sleep(TimeSpan.FromMilliseconds(3000));
-            ThreadRitorno.Start();
+            Thread.Sleep(TimeSpan.FromMilliseconds(1000));
+            TUscita1.Start();
 
         }
         public void Piano2()
@@ -138,16 +169,18 @@ namespace Proj_Ascensore
             {
                 posVerticaleAscensore -= 10;
                 posizioneQuarta += 10;
+                posQuarta1 += 10;
+                posVerticale1 -= 10;
                 Thread.Sleep(TimeSpan.FromMilliseconds(100));
                 this.Dispatcher.BeginInvoke(new Action(() =>
                 {
                     Ascensore_1.Margin = new Thickness(294, posVerticaleAscensore, 1049, posizioneQuarta);
-
+                    Uomo.Margin = new Thickness(posOrizz1, posVerticale1, posTerza1, posQuarta1);
                 }));
 
             }
-            Thread.Sleep(TimeSpan.FromMilliseconds(3000));
-            ThreadRitorno.Start();
+            Thread.Sleep(TimeSpan.FromMilliseconds(1000));
+            TUscita1.Start();
         }
         public void Piano3()
         {
@@ -155,16 +188,18 @@ namespace Proj_Ascensore
             {
                 posVerticaleAscensore -= 10;
                 posizioneQuarta += 10;
+                posQuarta1 += 10;
+                posVerticale1 -= 10;
                 Thread.Sleep(TimeSpan.FromMilliseconds(100));
                 this.Dispatcher.BeginInvoke(new Action(() =>
                 {
                     Ascensore_1.Margin = new Thickness(294, posVerticaleAscensore, 1049, posizioneQuarta);
-
+                    Uomo.Margin = new Thickness(posOrizz1, posVerticale1, posTerza1, posQuarta1);
                 }));
 
             }
-            Thread.Sleep(TimeSpan.FromMilliseconds(3000));
-            ThreadRitorno.Start();
+            Thread.Sleep(TimeSpan.FromMilliseconds(1000));
+            TUscita1.Start();
         }
         public void Piano4()
         {
@@ -172,16 +207,19 @@ namespace Proj_Ascensore
             {
                 posVerticaleAscensore -= 10;
                 posizioneQuarta += 10;
+                posQuarta1 += 10;
+                posVerticale1 -= 10;
                 Thread.Sleep(TimeSpan.FromMilliseconds(100));
                 this.Dispatcher.BeginInvoke(new Action(() =>
                 {
                     Ascensore_1.Margin = new Thickness(294, posVerticaleAscensore, 1049, posizioneQuarta);
+                    Uomo.Margin = new Thickness(posOrizz1, posVerticale1, posTerza1, posQuarta1);
 
                 }));
 
             }
-            Thread.Sleep(TimeSpan.FromMilliseconds(3000));
-            ThreadRitorno.Start();
+            Thread.Sleep(TimeSpan.FromMilliseconds(1000));
+            TUscita1.Start();
         }
         public void Piano5()
         {
@@ -189,29 +227,37 @@ namespace Proj_Ascensore
             {
                 posVerticaleAscensore -= 10;
                 posizioneQuarta += 10;
+                posQuarta1 += 10;
+                posVerticale1 -= 10;
                 Thread.Sleep(TimeSpan.FromMilliseconds(100));
                 this.Dispatcher.BeginInvoke(new Action(() =>
                 {
                     Ascensore_1.Margin = new Thickness(294, posVerticaleAscensore, 1049, posizioneQuarta);
+                    Uomo.Margin = new Thickness(posOrizz1, posVerticale1, posTerza1, posQuarta1);
 
                 }));
 
             }
-            Thread.Sleep(TimeSpan.FromMilliseconds(3000));
-            ThreadRitorno.Start();
+            Thread.Sleep(TimeSpan.FromMilliseconds(1000));
+            TUscita1.Start();
         }
 
         public void Ritorno()
         {
+            TUscita1.Abort();
             while (posVerticaleAscensore <= 600)
             {
                 posVerticaleAscensore += 10;
                 posizioneQuarta -= 10;
+                posQuarta1 -= 10;
+                posVerticale1 += 10;
+
+                
                 Thread.Sleep(TimeSpan.FromMilliseconds(100));
                 this.Dispatcher.BeginInvoke(new Action(() =>
                 {
                     Ascensore_1.Margin = new Thickness(294, posVerticaleAscensore, 1049, posizioneQuarta);
-
+                   
                 }));
             }
         }
@@ -234,17 +280,44 @@ namespace Proj_Ascensore
             BTN_4.IsEnabled = true;
             BTN_5.IsEnabled = true;
         }
+        //
 
-        private void Btn_Ritornato_Click(object sender, RoutedEventArgs e)
+        //UOMO
+        public void MovimentoUomo()
         {
-            if (posVerticaleAscensore >= 600)
+            while (posOrizz1 > 318)
             {
-                AccendiBottoni();
-            }
-            else
-            {
-                MessageBox.Show("L'ascensore non è ancora tornato al piano terra");
+                posOrizz1 -= 2;
+                posTerza1 += 2;
+                Thread.Sleep(TimeSpan.FromMilliseconds(100));
+                this.Dispatcher.BeginInvoke(new Action(() =>
+                {
+                   Uomo.Margin = new Thickness(posOrizz1, 639, posTerza1, 10);
+
+                }));
+
             }
         }
+
+        public void uomoEsce()
+        {
+            while (posOrizz1 > 150)
+            {
+                posOrizz1 -= 2;
+                posTerza1 += 2;
+                 
+                Thread.Sleep(TimeSpan.FromMilliseconds(100));
+                this.Dispatcher.BeginInvoke(new Action(() =>
+                {
+                    Uomo.Margin = new Thickness(posOrizz1, posVerticale1, posTerza1,posQuarta1 );
+
+                }));
+
+            }
+
+            Thread.Sleep(TimeSpan.FromMilliseconds(1));
+            ThreadRitorno.Start();
+        }
+        
     }
 }
