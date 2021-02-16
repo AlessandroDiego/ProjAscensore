@@ -142,6 +142,8 @@ namespace Proj_Ascensore
                 }));
 
             }
+            Thread.Sleep(TimeSpan.FromMilliseconds(1000));
+            TUscita1.Start();
         }
 
 
@@ -323,40 +325,7 @@ namespace Proj_Ascensore
                    
                 }));
             }
-            if (j == 22)
-            {
-                i = 2;
-                int piano = rnd.Next(1, 6);
-                switch (piano)
-                {
-                    case 1:
-                        TUscita1 = new Thread(new ThreadStart(Esce2));
-                        ThreadAndata = new Thread(new ThreadStart(Piano1));
-                        ThreadAndata.Start();
-                        break;
-                    case 2:
-                        TUscita1 = new Thread(new ThreadStart(Esce2));
-                        ThreadAndata = new Thread(new ThreadStart(Piano2));
-                        ThreadAndata.Start();
-                        break;
-                    case 3:
-                        TUscita1 = new Thread(new ThreadStart(Esce2));
-                        ThreadAndata = new Thread(new ThreadStart(Piano3));
-                        ThreadAndata.Start();
-                        break;
-                    case 4:
-                        TUscita1 = new Thread(new ThreadStart(Esce2));
-                        ThreadAndata = new Thread(new ThreadStart(Piano4));
-                        ThreadAndata.Start();
-                        break;
-                    case 5:
-                        TUscita1 = new Thread(new ThreadStart(Esce2));
-                        ThreadAndata = new Thread(new ThreadStart(Piano5));
-                        ThreadAndata.Start();
-                        break;
-                }
-
-            }
+            
         }
 
         public void SpegniBottoni()
@@ -503,8 +472,6 @@ namespace Proj_Ascensore
           
             BTN_MovAuto.IsEnabled = false;
             tUomo = new Thread(new ThreadStart(MovimentoAutoUomo));
-           
-            
             tUomo.Start();
 
         }
