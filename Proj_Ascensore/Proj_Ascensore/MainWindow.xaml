@@ -36,6 +36,5 @@
         <Label Content="1°" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1173,387,0,0" FontSize="36"/>
         <Label Content="2°" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1173,515,0,0" FontSize="36" RenderTransformOrigin="0.69,0.5"/>
         <Label Content="3°" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1173,637,0,0" FontSize="36"/>
-        <Button x:Name="BTN_MovAuto2" Content="Movimento Automatico&#xA;(Prima Donna poi Uomo)" HorizontalAlignment="Left" VerticalAlignment="Top" Width="406" Margin="1002,42,0,0" Height="262" FontSize="36" Click="BTN_MovAuto2_Click"/>
     </Grid>
 </Window>

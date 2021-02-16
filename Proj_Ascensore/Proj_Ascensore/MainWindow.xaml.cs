@@ -570,13 +570,6 @@ namespace Proj_Ascensore
         
         }
 
-        private void BTN_MovAuto2_Click(object sender, RoutedEventArgs e)
-        {
-            BTN_MovAuto2.IsEnabled = false;
-            i = 1;
-            j = 1;
-            ThreadAndata = new Thread(new ThreadStart(Piano3));
-            ThreadAndata.Start();
-        }
+       
     }
 }
