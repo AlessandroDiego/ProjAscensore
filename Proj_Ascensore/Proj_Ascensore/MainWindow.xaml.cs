@@ -499,7 +499,7 @@ namespace Proj_Ascensore
             ThreadRitorno.Start();
         }
 
-        //AUTOMATICO
+        //AUTOMATICO U/D
 
         public Thread tUomo;
         public Semaphore Semaforo = new Semaphore(0, 1);
@@ -564,6 +564,10 @@ namespace Proj_Ascensore
                 }
         
         }
-        
+
+        private void Btn_MovCas_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
