@@ -237,8 +237,9 @@ namespace Proj_Ascensore
                 TUscita1 = new Thread(new ThreadStart(Esce1));
                 TUscita1.Start();
             }
-            else if (i == 1 || j==22)
+            else if (i == 1)
             {
+                
                 Thread.Sleep(TimeSpan.FromMilliseconds(1000));
                 TEntrata1 = new Thread(new ThreadStart(MovimentoDonna));
                 TEntrata1.Start();
@@ -324,6 +325,45 @@ namespace Proj_Ascensore
                     }
                    
                 }));
+            }
+            if (j == 1)
+            {
+                j = 44;
+                ThreadAndata = new Thread(new ThreadStart(Piano3));
+                TUscita1 = new Thread(new ThreadStart(Esce2));
+                ThreadAndata.Start();
+            }else if (j == 44)
+            {
+                j = 120;
+                int piano = rnd.Next(1, 6);
+                switch (piano)
+                {
+                    case 1:
+                        TUscita1 = new Thread(new ThreadStart(Esce2));
+                        ThreadAndata = new Thread(new ThreadStart(Piano1));
+                        ThreadAndata.Start();
+                        break;
+                    case 2:
+                        TUscita1 = new Thread(new ThreadStart(Esce2));
+                        ThreadAndata = new Thread(new ThreadStart(Piano2));
+                        ThreadAndata.Start();
+                        break;
+                    case 3:
+                        TUscita1 = new Thread(new ThreadStart(Esce2));
+                        ThreadAndata = new Thread(new ThreadStart(Piano3));
+                        ThreadAndata.Start();
+                        break;
+                    case 4:
+                        TUscita1 = new Thread(new ThreadStart(Esce2));
+                        ThreadAndata = new Thread(new ThreadStart(Piano4));
+                        ThreadAndata.Start();
+                        break;
+                    case 5:
+                        TUscita1 = new Thread(new ThreadStart(Esce2));
+                        ThreadAndata = new Thread(new ThreadStart(Piano5));
+                        ThreadAndata.Start();
+                        break;
+                }
             }
             
         }
@@ -462,7 +502,6 @@ namespace Proj_Ascensore
         //AUTOMATICO
 
         public Thread tUomo;
-        public Thread tDonna;
         public Semaphore Semaforo = new Semaphore(0, 1);
         public Random rnd = new Random();
         public int j = 0;
@@ -479,7 +518,7 @@ namespace Proj_Ascensore
 
         public void MovimentoAutoUomo()
         {
-           
+            j = 1;
             while (posOrizz1 > 318)
             {
                 posOrizz1 -= 2;
