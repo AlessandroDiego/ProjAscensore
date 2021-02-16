@@ -60,15 +60,14 @@ namespace Proj_Ascensore
             ImageSource imm3 = new BitmapImage(uriDonna);
             Donna.Source = imm3;
 
-            TEntrata1 = new Thread(new ThreadStart(MovimentoUomo));
-            TUscita1 = new Thread(new ThreadStart(Esce1));
-            TEntrata1.Start();
+
 
 
         }
 
+        //MANUALE
 
-        // ASCENSORE
+        // ASCENSORE E MOVIMENTO PERSONE DENTRO
         private void BTN_Terra_Click(object sender, RoutedEventArgs e)
         {
             SpegniBottoni();
@@ -121,6 +120,7 @@ namespace Proj_Ascensore
         }
         private void Btn_Ritornato_Click(object sender, RoutedEventArgs e)
         {
+            Btn_Ritornato.IsEnabled = false;
             if (posVerticaleAscensore >= 600)
             {
                 AccendiBottoni();
@@ -324,6 +324,40 @@ namespace Proj_Ascensore
                    
                 }));
             }
+            if (j == 33)
+            {
+                i = 2;
+                int piano = rnd.Next(1, 6);
+                switch (piano)
+                {
+                    case 1:
+                        TUscita1 = new Thread(new ThreadStart(Esce2));
+                        ThreadAndata = new Thread(new ThreadStart(Piano1));
+                        ThreadAndata.Start();
+                        break;
+                    case 2:
+                        TUscita1 = new Thread(new ThreadStart(Esce2));
+                        ThreadAndata = new Thread(new ThreadStart(Piano2));
+                        ThreadAndata.Start();
+                        break;
+                    case 3:
+                        TUscita1 = new Thread(new ThreadStart(Esce2));
+                        ThreadAndata = new Thread(new ThreadStart(Piano3));
+                        ThreadAndata.Start();
+                        break;
+                    case 4:
+                        TUscita1 = new Thread(new ThreadStart(Esce2));
+                        ThreadAndata = new Thread(new ThreadStart(Piano4));
+                        ThreadAndata.Start();
+                        break;
+                    case 5:
+                        TUscita1 = new Thread(new ThreadStart(Esce2));
+                        ThreadAndata = new Thread(new ThreadStart(Piano5));
+                        ThreadAndata.Start();
+                        break;
+                }
+
+            }
         }
 
         public void SpegniBottoni()
@@ -352,6 +386,14 @@ namespace Proj_Ascensore
         //
 
         //UOMO
+
+        private void Btn_PrimaPersona_Click(object sender, RoutedEventArgs e)
+        {
+            Btn_PrimaPersona.IsEnabled = false;
+            TEntrata1 = new Thread(new ThreadStart(MovimentoUomo));
+            TUscita1 = new Thread(new ThreadStart(Esce1));
+            TEntrata1.Start();
+        }
         public void MovimentoUomo()
         {
             while (posOrizz1 > 318)
@@ -365,6 +407,40 @@ namespace Proj_Ascensore
 
                 }));
 
+            }
+            if (i == 33)
+            {
+                i = 0;
+                int piano= rnd.Next(1, 6);
+                switch (piano)
+                {
+                    case 1:
+                        TUscita1 = new Thread(new ThreadStart(Esce1));
+                        ThreadAndata = new Thread(new ThreadStart(Piano1));
+                        ThreadAndata.Start();
+                        break;
+                    case 2:
+                        TUscita1 = new Thread(new ThreadStart(Esce1));
+                        ThreadAndata = new Thread(new ThreadStart(Piano2));
+                        ThreadAndata.Start();
+                        break;
+                    case 3:
+                        TUscita1 = new Thread(new ThreadStart(Esce1));
+                        ThreadAndata = new Thread(new ThreadStart(Piano3));
+                        ThreadAndata.Start();
+                        break;
+                    case 4:
+                        TUscita1 = new Thread(new ThreadStart(Esce1));
+                        ThreadAndata = new Thread(new ThreadStart(Piano4));
+                        ThreadAndata.Start();
+                        break;
+                    case 5:
+                        TUscita1 = new Thread(new ThreadStart(Esce1));
+                        ThreadAndata = new Thread(new ThreadStart(Piano5));
+                        ThreadAndata.Start();
+                        break;
+                }
+                
             }
         }
 
@@ -419,6 +495,7 @@ namespace Proj_Ascensore
                 }));
 
             }
+
             Thread.Sleep(TimeSpan.FromMilliseconds(100));
             ThreadRitorno = new Thread(new ThreadStart(Ritorno));
             ThreadRitorno.Start();
@@ -444,6 +521,43 @@ namespace Proj_Ascensore
             ThreadRitorno.Start();
         }
 
+        //AUTOMATICO
 
+        public Thread tUomo;
+        public Thread tDonna;
+        public Semaphore Semaforo;
+        public Random rnd;
+        public int j = 0;
+        private void BTN_MovAuto_Click(object sender, RoutedEventArgs e)
+        {
+            i = 1;
+            tUomo = new Thread(new ThreadStart(UomoAuto));
+            tDonna = new Thread(new ThreadStart(DonnaAuto));
+
+            Semaforo = new Semaphore(0, 1);
+            tUomo.Start();
+            tDonna.Start();
+
+
+            Semaforo.Release(1);
+        }
+
+        Thread entrata;
+        public void UomoAuto()
+        {
+            i = 33;
+            Semaforo.WaitOne();
+            entrata = new Thread(new ThreadStart(MovimentoUomo)); 
+            Semaforo.Release();
+        }
+        public void DonnaAuto()
+        {
+            j = 33;
+            Semaforo.WaitOne();
+            entrata = new Thread(new ThreadStart(MovimentoDonna));
+            Semaforo.Release();
+        }
+
+        
     }
 }

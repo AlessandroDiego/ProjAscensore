@@ -18,7 +18,23 @@
         <Button x:Name="BTN_2" Content="2" HorizontalAlignment="Left" VerticalAlignment="Top" Width="124" Margin="974,471,0,0" Height="102" FontSize="36" Click="BTN_2_Click"/>
         <Button x:Name="BTN_3" Content="3" HorizontalAlignment="Left" VerticalAlignment="Top" Width="124" Margin="652,615,0,0" Height="102" RenderTransformOrigin="0.5,0.534" FontSize="36" Click="BTN_3_Click"/>
         <Label Content="Muovi L'ascensore" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="652,387,0,0" Height="79" Width="446" FontSize="36"/>
-        <Button x:Name="Btn_Ritornato" Content="Ascensore&#xD;&#xA;Ritornato al&#xD;&#xA; Piano Terra" HorizontalAlignment="Left" VerticalAlignment="Top" Width="176" Margin="1216,471,0,0" Height="102" FontSize="22" Click="Btn_Ritornato_Click"/>
-        <Button x:Name="BTN_SecondaPersona" Content="Seconda Persona" HorizontalAlignment="Left" VerticalAlignment="Top" Width="176" Margin="1216,615,0,0" Height="90" FontSize="22" Click="BTN_SecondaPersona_Click"/>
+        <Button x:Name="Btn_Ritornato" Content="Ascensore&#xD;&#xA;Ritornato al&#xD;&#xA; Piano Terra" HorizontalAlignment="Left" VerticalAlignment="Top" Width="176" Margin="1216,620,0,0" Height="102" FontSize="22" Click="Btn_Ritornato_Click"/>
+        <Button x:Name="BTN_SecondaPersona" Content="Seconda Persona" HorizontalAlignment="Left" VerticalAlignment="Top" Width="176" Margin="1216,496,0,0" Height="90" FontSize="22" Click="BTN_SecondaPersona_Click"/>
+        <GridSplitter HorizontalAlignment="Left" Height="856" Margin="984,-76,0,-48" VerticalAlignment="Top" Width="6" RenderTransformOrigin="0.5,0.5" Background="Red">
+            <GridSplitter.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </GridSplitter.RenderTransform>
+        </GridSplitter>
+        <GridSplitter HorizontalAlignment="Left" Height="732" VerticalAlignment="Top" Width="6" Margin="562,0,0,0" Background="Red"/>
+        <Button x:Name="BTN_MovAuto" Content="Movimento Automatico&#xD;&#xA;(Semafori e Code)" HorizontalAlignment="Left" VerticalAlignment="Top" Width="486" Margin="612,42,0,0" Height="262" FontSize="36" Click="BTN_MovAuto_Click"/>
+        <Button x:Name="Btn_PrimaPersona" Content="Prima Persona" HorizontalAlignment="Left" VerticalAlignment="Top" Width="176" Margin="1216,379,0,0" Height="85" Click="Btn_PrimaPersona_Click" FontSize="22"/>
+        <Label Content="1°" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1173,387,0,0" FontSize="36"/>
+        <Label Content="2°" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1173,515,0,0" FontSize="36" RenderTransformOrigin="0.69,0.5"/>
+        <Label Content="3°" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1173,637,0,0" FontSize="36"/>
     </Grid>
 </Window>
