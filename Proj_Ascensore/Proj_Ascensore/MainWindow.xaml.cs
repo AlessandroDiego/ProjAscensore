@@ -333,6 +333,44 @@ namespace Proj_Ascensore
                 TUscita1 = new Thread(new ThreadStart(Esce2));
                 ThreadAndata.Start();
             }
+            else if (j == 56)
+            {
+                j = 130;
+                int piano = rnd.Next(0, 6);
+                switch (piano)
+                {
+                    case 0:
+                        TUscita1 = new Thread(new ThreadStart(Esce2));
+                        ThreadAndata = new Thread(new ThreadStart(PianoTerra));
+                        ThreadAndata.Start();
+                        break;
+                    case 1:
+                        TUscita1 = new Thread(new ThreadStart(Esce2));
+                        ThreadAndata = new Thread(new ThreadStart(Piano1));
+                        ThreadAndata.Start();
+                        break;
+                    case 2:
+                        TUscita1 = new Thread(new ThreadStart(Esce2));
+                        ThreadAndata = new Thread(new ThreadStart(Piano2));
+                        ThreadAndata.Start();
+                        break;
+                    case 3:
+                        TUscita1 = new Thread(new ThreadStart(Esce2));
+                        ThreadAndata = new Thread(new ThreadStart(Piano4));
+                        ThreadAndata.Start();
+                        break;
+                    case 4:
+                        TUscita1 = new Thread(new ThreadStart(Esce2));
+                        ThreadAndata = new Thread(new ThreadStart(Piano4));
+                        ThreadAndata.Start();
+                        break;
+                    case 5:
+                        TUscita1 = new Thread(new ThreadStart(Esce2));
+                        ThreadAndata = new Thread(new ThreadStart(Piano5));
+                        ThreadAndata.Start();
+                        break;
+                }
+            }
             else if (j == 44)
             {
                 j = 120;
@@ -370,6 +408,11 @@ namespace Proj_Ascensore
                         ThreadAndata.Start();
                         break;
                 }
+            }else if (j == 130)
+            {
+                TEntrata1 = new Thread(new ThreadStart(MovimentoAutoUomo));
+                TUscita1 = new Thread(new ThreadStart(Esce1));
+                TEntrata1.Start();
             }
             
         }
@@ -524,7 +567,15 @@ namespace Proj_Ascensore
 
         public void MovimentoAutoUomo()
         {
-            j = 1;
+            if (j != 130)
+            {
+                j = 1;
+            }
+
+            if (j == 130)
+            {
+                j = 698;
+            }
             while (posOrizz1 > 318)
             {
                 posOrizz1 -= 2;
@@ -570,6 +621,13 @@ namespace Proj_Ascensore
         
         }
 
-       
+        private void Btn_MovDU_Click(object sender, RoutedEventArgs e)
+        {
+            i = 1;
+            j = 56;
+            ThreadAndata = new Thread(new ThreadStart(Piano3));
+            TUscita1 = new Thread(new ThreadStart(Esce2));
+            ThreadAndata.Start();
+        }
     }
 }
