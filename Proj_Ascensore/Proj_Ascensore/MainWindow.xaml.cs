@@ -594,7 +594,6 @@ namespace Proj_Ascensore
         //AUTOMATICO U/D
 
         public Thread tUomo;
-        public Semaphore Semaforo = new Semaphore(0, 1);
         public Random rnd = new Random();
         public int j = 0;
         
@@ -680,6 +679,45 @@ namespace Proj_Ascensore
             ThreadAndata = new Thread(new ThreadStart(Piano3));
             TUscita1 = new Thread(new ThreadStart(Esce2));
             ThreadAndata.Start();
+        }
+
+
+        //Semaforo 
+
+        int g = 0;
+
+        private  object x = new object();
+        private void Btn_Semaforo_Click(object sender, RoutedEventArgs e)
+        {
+            Thread t1 = new Thread(new ThreadStart(UomoSemaforo));
+            Thread t2 = new Thread(new ThreadStart(DonnaSemaforo));
+
+            t1.Start();
+            t2.Start();
+        }
+        public void UomoSemaforo()
+        {
+            lock (x)
+            {
+
+                i = 1;
+                tUomo = new Thread(new ThreadStart(MovimentoAutoUomo));
+                TUscita1 = new Thread(new ThreadStart(Esce1));
+                tUomo.Start();
+            }
+
+        }
+
+        public void DonnaSemaforo()
+        {
+            lock (x)
+            {
+                i = 1;
+                j = 56;
+                ThreadAndata = new Thread(new ThreadStart(Piano3));
+                TUscita1 = new Thread(new ThreadStart(Esce2));
+                ThreadAndata.Start();
+            }
         }
     }
 }
