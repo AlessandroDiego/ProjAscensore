@@ -142,8 +142,17 @@ namespace Proj_Ascensore
                 }));
 
             }
-            Thread.Sleep(TimeSpan.FromMilliseconds(1000));
-            TUscita1.Start();
+            if (y == 54)
+            {
+                Thread.Sleep(TimeSpan.FromMilliseconds(1000));
+                TUscita2 = new Thread(new ThreadStart(Esce2));
+                TUscita2.Start();
+            }
+            else
+            {
+                Thread.Sleep(TimeSpan.FromMilliseconds(1000));
+                TUscita1.Start();
+            }
         }
 
 
@@ -180,8 +189,18 @@ namespace Proj_Ascensore
                 
                 
             }
-            Thread.Sleep(TimeSpan.FromMilliseconds(1000));
-            TUscita1.Start();
+            if (y == 54)
+            {
+                Thread.Sleep(TimeSpan.FromMilliseconds(1000));
+                TUscita2 = new Thread(new ThreadStart(Esce2));
+                TUscita2.Start();
+            }
+            else
+            {
+                Thread.Sleep(TimeSpan.FromMilliseconds(1000));
+                TUscita1.Start();
+            }
+            
 
         }
         public void Piano2()
@@ -217,8 +236,17 @@ namespace Proj_Ascensore
                 
 
             }
-            Thread.Sleep(TimeSpan.FromMilliseconds(1000));
-            TUscita1.Start();
+            if (y == 54)
+            {
+                Thread.Sleep(TimeSpan.FromMilliseconds(1000));
+                TUscita2 = new Thread(new ThreadStart(Esce2));
+                TUscita2.Start();
+            }
+            else
+            {
+                Thread.Sleep(TimeSpan.FromMilliseconds(1000));
+                TUscita1.Start();
+            }
         }
         public void Piano3()
         {
@@ -302,8 +330,17 @@ namespace Proj_Ascensore
          
                
             }
-            Thread.Sleep(TimeSpan.FromMilliseconds(1000));
-            TUscita1.Start();
+            if (y == 54)
+            {
+                Thread.Sleep(TimeSpan.FromMilliseconds(1000));
+                TUscita2 = new Thread(new ThreadStart(Esce2));
+                TUscita2.Start();
+            }
+            else
+            {
+                Thread.Sleep(TimeSpan.FromMilliseconds(1000));
+                TUscita1.Start();
+            }
         }
         public void Piano5()
         {
@@ -339,8 +376,17 @@ namespace Proj_Ascensore
                 
 
             }
+            if (y == 54)
+            {
+                Thread.Sleep(TimeSpan.FromMilliseconds(1000));
+                TUscita2 = new Thread(new ThreadStart(Esce2));
+                TUscita2.Start();
+            }
+            else
+            {
                 Thread.Sleep(TimeSpan.FromMilliseconds(1000));
                 TUscita1.Start();
+            }
         }
 
         public void Ritorno()
@@ -452,7 +498,52 @@ namespace Proj_Ascensore
                 TUscita1 = new Thread(new ThreadStart(Esce1));
                 TEntrata1.Start();
             }
-            
+            else if(j== 964)
+            {
+                j = 135;
+                int piano = rnd.Next(0, 6);
+                switch (piano)
+                {
+                    case 0:
+                        TUscita2 = new Thread(new ThreadStart(Esce2));
+                        ThreadAndata = new Thread(new ThreadStart(PianoTerra));
+                        ThreadAndata.Start();
+                        break;
+                    case 1:
+                        TUscita2 = new Thread(new ThreadStart(Esce2));
+                        ThreadAndata = new Thread(new ThreadStart(Piano1));
+                        ThreadAndata.Start();
+                        break;
+                    case 2:
+                        TUscita2 = new Thread(new ThreadStart(Esce2));
+                        ThreadAndata = new Thread(new ThreadStart(Piano2));
+                        ThreadAndata.Start();
+                        break;
+                    case 3:
+                        TUscita2 = new Thread(new ThreadStart(Esce2));
+                        ThreadAndata = new Thread(new ThreadStart(Piano4));
+                        ThreadAndata.Start();
+                        break;
+                    case 4:
+                        TUscita2 = new Thread(new ThreadStart(Esce2));
+                        ThreadAndata = new Thread(new ThreadStart(Piano4));
+                        ThreadAndata.Start();
+                        break;
+                    case 5:
+                        TUscita2 = new Thread(new ThreadStart(Esce2));
+                        ThreadAndata = new Thread(new ThreadStart(Piano5));
+                        ThreadAndata.Start();
+                        break;
+                }
+            }
+            else if (j == 135)
+            {
+                TEntrata1 = new Thread(new ThreadStart(MovimentoAutoUomo));
+                TUscita1 = new Thread(new ThreadStart(Esce1));
+                TEntrata1.Start();
+            }
+
+
         }
 
         public void SpegniBottoni()
@@ -684,38 +775,42 @@ namespace Proj_Ascensore
 
         //Semaforo 
 
-        int g = 0;
+        int y = 0;
+        private static object x = new object();
 
-        private  object x = new object();
         private void Btn_Semaforo_Click(object sender, RoutedEventArgs e)
         {
             Thread t1 = new Thread(new ThreadStart(UomoSemaforo));
             Thread t2 = new Thread(new ThreadStart(DonnaSemaforo));
 
+
             t1.Start();
             t2.Start();
+
+            
         }
         public void UomoSemaforo()
         {
             lock (x)
             {
-
+                j = 0;
                 i = 1;
                 tUomo = new Thread(new ThreadStart(MovimentoAutoUomo));
                 TUscita1 = new Thread(new ThreadStart(Esce1));
                 tUomo.Start();
             }
-
         }
 
+        Thread TUscita2;
         public void DonnaSemaforo()
         {
             lock (x)
             {
+                y = 54;
                 i = 1;
-                j = 56;
+                j = 964;
                 ThreadAndata = new Thread(new ThreadStart(Piano3));
-                TUscita1 = new Thread(new ThreadStart(Esce2));
+                TUscita2 = new Thread(new ThreadStart(Esce2));
                 ThreadAndata.Start();
             }
         }
