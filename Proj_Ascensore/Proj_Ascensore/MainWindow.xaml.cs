@@ -578,6 +578,7 @@ namespace Proj_Ascensore
             AccendiBottoni();
             Btn_MovDU.IsEnabled = false;
             BTN_MovAuto.IsEnabled = false;
+            Btn_Semaforo.IsEnabled = false;
             Btn_PrimaPersona.IsEnabled = false;
             TEntrata1 = new Thread(new ThreadStart(MovimentoUomo));
             TUscita1 = new Thread(new ThreadStart(Esce1));
@@ -694,6 +695,7 @@ namespace Proj_Ascensore
             Btn_PrimaPersona.IsEnabled = false;
             BTN_SecondaPersona.IsEnabled = false;
             Btn_Ritornato.IsEnabled = false;
+            Btn_Semaforo.IsEnabled = false;
             Btn_MovDU.IsEnabled = false;
             tUomo = new Thread(new ThreadStart(MovimentoAutoUomo));
             tUomo.Start();
@@ -764,7 +766,7 @@ namespace Proj_Ascensore
             Btn_PrimaPersona.IsEnabled = false;
             BTN_SecondaPersona.IsEnabled = false;
             Btn_Ritornato.IsEnabled = false;
-            
+            Btn_Semaforo.IsEnabled = false;
             i = 1;
             j = 56;
             ThreadAndata = new Thread(new ThreadStart(Piano3));
@@ -780,39 +782,42 @@ namespace Proj_Ascensore
 
         private void Btn_Semaforo_Click(object sender, RoutedEventArgs e)
         {
+            Btn_MovDU.IsEnabled = false;
+            BTN_MovAuto.IsEnabled = false;
+            Btn_PrimaPersona.IsEnabled = false;
+            BTN_SecondaPersona.IsEnabled = false;
+            Btn_Ritornato.IsEnabled = false;
+
             Thread t1 = new Thread(new ThreadStart(UomoSemaforo));
             Thread t2 = new Thread(new ThreadStart(DonnaSemaforo));
 
+                t1.Start();
+                t2.Start();
 
-            t1.Start();
-            t2.Start();
-
-            
         }
         public void UomoSemaforo()
         {
-            lock (x)
-            {
+            
                 j = 0;
                 i = 1;
                 tUomo = new Thread(new ThreadStart(MovimentoAutoUomo_Semaforo));
                 TUscita1 = new Thread(new ThreadStart(Esce1));
                 tUomo.Start();
-            }
+
+           
+
         }
 
         Thread TUscita2;
         public void DonnaSemaforo()
         {
-            lock (x)
-            {
                 y = 54;
                 i = 1;
                 j = 964;
                 ThreadAndata = new Thread(new ThreadStart(Piano3_Semaforo));
                 TUscita2 = new Thread(new ThreadStart(Esce2));
                 ThreadAndata.Start();
-            }
+        
         }
 
         public void Piano3_Semaforo()
@@ -865,6 +870,8 @@ namespace Proj_Ascensore
                     TEntrata1.Start();
                 }
             }
+                
+
         }
         public void MovimentoAutoUomo_Semaforo()
         {
@@ -922,8 +929,6 @@ namespace Proj_Ascensore
                         break;
                 }
             }
-            
-
         }
 
     }

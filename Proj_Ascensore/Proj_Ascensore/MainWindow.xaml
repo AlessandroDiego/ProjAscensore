@@ -38,6 +38,6 @@
         <Label Content="3°" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1173,637,0,0" FontSize="36"/>
         <Button x:Name="Btn_MovDU" Content="Movimento Automatico&#xD;&#xA;(Prima Donna poi Uomo" HorizontalAlignment="Left" VerticalAlignment="Top" Width="406" Margin="1002,54,0,0" Height="115" FontSize="36" Click="Btn_MovDU_Click"/>
         <Label Content="Modalità Automatica" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="588,-2,0,0" Height="79" Width="446" FontSize="36"/>
-        <Button x:Name="Btn_Semaforo" Content="Movimento con Semafori" HorizontalAlignment="Left" VerticalAlignment="Top" Width="532" Margin="722,212,0,0" Height="112" FontSize="36" Click="Btn_Semaforo_Click"/>
+        <Button x:Name="Btn_Semaforo" Content="Movimento con Semafori&#xD;&#xA;(Non Funzionante Correttamente)" HorizontalAlignment="Left" VerticalAlignment="Top" Width="564" Margin="694,204,0,0" Height="112" FontSize="36" Click="Btn_Semaforo_Click"/>
     </Grid>
 </Window>
